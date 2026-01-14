@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "SG Connect",
+    "version": "1.0.1",
+    "newArchEnabled": false,
+    "slug": "tally-support-system",
+    "icon": "./assets/images/tally.jpg",
+    "splash": {
+      "image": "./assets/images/tally.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#05308E"
+    },
+    "android": {
+      "package": "com.chai2151.tallysupportsystem",
+      "versionCode": 4,
+      "splash": {
+        "image": "./assets/images/tally.jpg",
+        "resizeMode": "contain",
+        "backgroundColor": "#05308E"
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/tally.jpg",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "owner": "ranjeet009",
+    "extra": {
+      "eas": {
+        "projectId": "bb1f7ef1-bbfe-40af-be58-72d6e12bbd1b"
+      }
+    }
+  }
+}
