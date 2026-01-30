@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Warm cream/ivory background for art gallery feel */
+  --background: oklch(0.98 0.01 85);
+  --foreground: oklch(0.25 0.02 50);
+
+  /* Card with subtle warmth */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.02 50);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.02 50);
+
+  /* Gold/bronze primary for art brand */
+  --primary: oklch(0.55 0.12 65);
+  --primary-foreground: oklch(0.98 0.01 85);
+
+  /* Soft sage secondary */
+  --secondary: oklch(0.94 0.02 140);
+  --secondary-foreground: oklch(0.35 0.04 140);
+
+  /* Muted earthy tones */
+  --muted: oklch(0.95 0.01 85);
+  --muted-foreground: oklch(0.5 0.02 50);
+
+  /* Warm terracotta accent */
+  --accent: oklch(0.65 0.14 45);
+  --accent-foreground: oklch(0.98 0.01 85);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+
+  /* Subtle warm borders */
+  --border: oklch(0.9 0.02 85);
+  --input: oklch(0.92 0.01 85);
+  --ring: oklch(0.55 0.12 65);
+
+  /* Gold custom color for accents */
+  --gold: oklch(0.72 0.14 75);
+  --gold-light: oklch(0.85 0.08 80);
+  --terracotta: oklch(0.6 0.15 40);
+  --sage: oklch(0.75 0.06 145);
+
+  --chart-1: oklch(0.55 0.12 65);
+  --chart-2: oklch(0.65 0.14 45);
+  --chart-3: oklch(0.75 0.06 145);
+  --chart-4: oklch(0.72 0.14 75);
+  --chart-5: oklch(0.6 0.15 40);
+
+  --radius: 0.5rem;
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@theme inline {
+  --font-sans: "Cormorant Garamond", "Georgia", serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-terracotta: var(--terracotta);
+  --color-sage: var(--sage);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
+/* Custom animations for artistic feel */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
